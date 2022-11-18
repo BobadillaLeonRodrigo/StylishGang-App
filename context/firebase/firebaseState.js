@@ -6,6 +6,8 @@ import FirebaseContext from './firebaseContext';
 
 import { OBTENER_PRODUCTOS_EXITO } from '../../types';
 
+import _ from 'lodash';
+
 const FirebaseState = props => {
 
     //Crear state inicial
@@ -32,6 +34,10 @@ const FirebaseState = props => {
                     ...doc.data()
                 }
             });
+            //Ordenar por categoria con lodash
+            articulos = _.sortBy(articulos, 'categoria');
+
+
             //Tenemos resultado de la base de datos
             dispatch({
                 type: OBTENER_PRODUCTOS_EXITO,
