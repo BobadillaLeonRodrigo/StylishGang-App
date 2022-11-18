@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-
+//Se agregan estilos nuevos
 const globalStyles = StyleSheet.create({
     contenedor: {
         flex: 1
